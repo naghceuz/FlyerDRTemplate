@@ -1,0 +1,32 @@
+{% extends 'pointstracker/base_template.html' %}
+
+{% load staticfiles %}
+
+{% block title %}FlyerDR - Log In{% endblock %}
+
+{% block head_extra %}
+<link href="{% static 'pointstracker/css/signin.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+
+        {% include 'pointstracker/messages.html' %}
+
+<!--      <div class="alert alert-danger" role="alert">Your username and password didn't match. Please try again.</div> -->
+
+      <form class="form-signin" role="form" method="post" action="">
+        {% csrf_token %}
+        <h2 class="form-signin-heading">Sign in</h2>
+        <input type="username" class="form-control" placeholder="Username" required="" autofocus="" name="username">
+        <input type="password" class="form-control" placeholder="Password" required="" name="password">
+<!--        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me" name="remember"> Remember me
+          </label>
+        </div> -->
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+{% endblock %}

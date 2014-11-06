@@ -1,0 +1,27 @@
+{% extends 'pointstracker/base_template.html' %}
+
+{% load staticfiles %}
+
+{% block head_extra %}
+  <link rel="stylesheet" href="{% static 'pointstracker/css/main.css' %}">
+{% endblock %}    
+
+{% block body %}
+    <div class="container"  
+    style="position: relative;
+    left:80px;
+    top:300px;
+     ">
+      <div class="col-sm-6">
+          <div class="hero-unit">
+            <h1>FlyerDR</h1>
+            <h4>Manage Your Flight Credit</h4>
+          </div> 
+          <div class="btns">
+            <a class="btn btn-large btn-primary" href="{% url 'signup' %}">Join FlyerDR</a>
+            <a class="btn btn-large btn-primary" href="{% url 'login' %}"> Sign In</a>
+
+          </div>  
+      </div> 
+    </div>  
+{% endblock %}

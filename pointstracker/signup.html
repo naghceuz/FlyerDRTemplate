@@ -1,0 +1,33 @@
+{% extends 'pointstracker/base_template.html' %}
+
+{% load staticfiles %}
+
+{% block head_extra %}
+<link href="{% static 'pointstracker/css/signin.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}FlyerDR - Signup{% endblock %}
+
+{% block body %}
+    <div class="container">
+    {% include 'pointstracker/messages.html' %}
+      <form class="form-signin" role="form" method="post" action="{% url 'signup' %}">
+        {% csrf_token %}
+        <h2 class="form-signin-heading">Sign up</h2>
+        <input type="email" class="form-control" placeholder="Email address" required="" autofocus="" name="email">
+        <input type="password" class="form-control" placeholder="Password" required="" name="password">
+        <input type="password" class="form-control" placeholder="Password (Repeat)" required="" name="password2">
+
+
+        <input type="lastName" class="form-control" placeholder="Last Name" required="" name="last">
+
+        <input type="First Name" class="form-control" placeholder="First Name" required="" name="first">
+
+<!--        <input type="Cell Phone" class="form-control" placeholder="Cell Phone" required="" name="cell"> -->
+
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+      </form>
+
+    </div> <!-- /container -->
+{% endblock %}
